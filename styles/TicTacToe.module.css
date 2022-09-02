@@ -17,6 +17,10 @@
 	align-items: center;
 	font-size: 50px;
 }
+.cell:hover {
+	background-color: rgb(255, 206, 114);
+	cursor: pointer;
+}
 .playAgain {
 	margin-top: 20px;
 	padding: 10px;

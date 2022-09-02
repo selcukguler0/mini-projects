@@ -1,0 +1,12 @@
+.vote {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px 20px 10px 20px;
+	border-radius: 10px;
+}
+
+.vote:hover {
+	background-color: rgb(247, 197, 104);
+	cursor: pointer;
+}

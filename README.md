@@ -9,3 +9,4 @@ Mainly used React and Next.js
 | 2 | Github Profiles |[Demo](https://mini-projects.selcukguler.com/github-profiles)|
 | 3 | Random Password |[Demo](https://mini-projects.selcukguler.com/random-password)|
 | 4 | Customer Feedback |[Demo](https://mini-projects.selcukguler.com/customer-feedback)|
+| 4 | Tic Tac Toe |[Demo](https://mini-projects.selcukguler.com/tic-tac-toe)|

@@ -17,3 +17,14 @@
 	align-items: center;
 	font-size: 50px;
 }
+.playAgain {
+	margin-top: 20px;
+	padding: 10px;
+	background: rgb(255, 206, 114);
+	border: 1px solid black;
+	border-radius: 10px;
+}
+.playAgain:hover {
+	background: rgb(253, 171, 18);
+	cursor: pointer;
+}

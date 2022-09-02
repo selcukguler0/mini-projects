@@ -1,5 +1,5 @@
 import Helmet from "react-helmet"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import styles from "../styles/TicTacToe.module.css"
 
@@ -31,7 +31,6 @@ export default function TicTacToe() {
 			console.log("row", row, "col", col);
 			e.target.innerHTML = turn
 		}
-		checkWinner();
 	};
 	const checkWinner = () => {
 		condition.forEach((cond) => {
@@ -40,14 +39,50 @@ export default function TicTacToe() {
 			const b = cond[1];
 			const c = cond[2];
 			if (a === b && b === c && a !== "") {
-				setWinner(board[a]);
-				console.log("winner", board[a]);
-				console.log(winner);
+				setWinner(a);
 			}
 		});
 	};
-	
+	const checkDraw = () => {
+		let draw = true;
+		board.forEach((row) => {
+			row.forEach((col) => {
+				if (col === "") {
+					draw = false;
+				}
+			});
+		});
+		if (draw) {
+			setWinner("draw");
+		}
+	};
+	useEffect(() => {
+		checkWinner();
+	}, [turn]);
 
+	const playAgain = () => {
+		board.forEach((row) => {
+			row.forEach((col, i) => {
+				row[i] = "";
+			});
+		});
+		setWinner(null);
+		setTurn("X");
+	};
+	if (!winner) {
+		checkDraw();
+	}
+	if (winner) {
+		return <>
+			<Helmet>
+				<body style="height:100vh;background:wheat;display:flex;justify-content:center;align-items:center;"></body>
+			</Helmet>
+			<div className={styles.board}>
+				<h1 style={{ textAlign: "center" }}>{ winner === "draw" ? "Draw" : winner + " Won!" }</h1>
+				<button className={styles.playAgain} onClick={playAgain}>Play Again</button>
+			</div>
+		</>
+	} 
 	return (
 		<>
 			<Helmet>
